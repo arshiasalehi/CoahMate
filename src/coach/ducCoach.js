@@ -40,8 +40,8 @@ const DucCoach = () => {
         const clientData = clientDoc.data();
 
         // Update wallets
-        const updatedCoachWallet = (coachData.wallet || 0) - document.price;
-        const updatedClientWallet = (clientData.wallet || 0) + document.price;
+        const updatedCoachWallet = Number(coachData.wallet ) - Number(document.price);
+        const updatedClientWallet = Number(clientData.wallet ) + Number(document.price);
 
         // Update time availability
         const updatedAvailability = [

@@ -37,12 +37,14 @@ const DucClient = () => {
             <li key={index}>
               {/* Display the properties of each document */}
               <h4>Document Index: {index}</h4>
-              <p>Name: {document.coachId}</p>
+              <p>coach id: {document.coachId}</p>
               <p>Description: {document.description}</p>
               <p>date: {document.date}</p>
               <p>time: {document.time}</p>
               <p>price: {document.price}</p>
-              <p>Coach Name: {document.coachName}</p>
+              
+              
+                
               {/* Add more fields as necessary */}
             </li>
           ))}

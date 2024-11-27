@@ -65,11 +65,20 @@ const ConnectClient = () => {
       const coachRef = doc(db, 'users', coachId);
   
       try {
+          // Fetch coach's current wallet balance
+      const coachSnapshot = await getDoc(coachRef);
+      if (!coachSnapshot.exists()) {
+        throw new Error("Coach does not exist.");
+      }
+
+      const coachData = coachSnapshot.data();
+      const coachWallet = coachData.wallet;
+
         console.log("Updating Client Data...");
         await updateDoc(clientRef, {
-          schedule: arrayUnion({ date, time, description, coachId }),
+          schedule: arrayUnion({ date, time, description, coachId , coachName: selectedTimeSlot.timeSlot.coachName }),
           selectedCoach: coachId,
-          wallet: clientWallet - price,
+          clientWallet: (Number(clientWallet) - Number(price)),
           documents: arrayUnion({
             date,
             time,
@@ -83,6 +92,7 @@ const ConnectClient = () => {
   
         console.log("Updating Coach Data...");
         await updateDoc(coachRef, {
+          coachWallet: (Number(coachWallet) + Number(price)),
           schedule: arrayRemove(selectedTimeSlot.timeSlot),
           documents: arrayUnion({
             date,
@@ -92,6 +102,7 @@ const ConnectClient = () => {
             clientName: auth.currentUser.displayName || "Unknown Client",  // Ensure this exists
             price,
             transactionType: 'Booking',
+            coachName: selectedTimeSlot.timeSlot.coachName || "Unknown Coach",
           }),
         });
   

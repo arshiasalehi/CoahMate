@@ -60,14 +60,15 @@ const DashboardCoach = () => {
       </div>
       <div className="dashboard-box">
         <h3>Wallet</h3>
-        <p>${walletAmount.toFixed(2)}</p>
+        <p>${walletAmount}</p>
+        {/* <p>${walletAmount.toFixed(2)}</p> */}
       </div>
       <div className="dashboard-box">
         <h3>Schedule</h3>
         {schedule.length > 0 ? (
           <ul>
             {schedule.map((item, index) => (
-              <li key={index}>{item.date} - {item.time}: {item.description}- ${item.price}</li>
+              <li key={index}>{item.date} - {item.time}: {item.description}- ${Number(item.price)}</li>
             ))}
           </ul>
         ) : (
