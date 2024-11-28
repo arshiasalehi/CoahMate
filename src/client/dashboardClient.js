@@ -80,13 +80,14 @@ const DashboardClient = () => {
         <h4>${userData?.wallet}</h4>
         {/* <p>${wallet.toFixed(2)}</p> */}
 
-        {/* Stripe Buy Button */}
-        {/* <div id="stripe-buy-button-container" style={{ marginTop: '10px' }}>
-          <stripe-buy-button
-            buy-button-id="buy_btn_1QF2iCF9QtEYmFjuM1YzAefr"
-            publishable-key="pk_test_51QF2SLF9QtEYmFjuhKpM35jLbKYEq56KSCLrvNVVkKfqrNUcmIe49OQaWf3oGe8SY2BaHVO9gAiEUmClIA8w2nXD00pCNpV5wM"
-          ></stripe-buy-button>
-        </div> */}
+        Buy Button
+        <div id="stripe-buy-button-container" style={{ marginTop: '10px' }}>
+            <stripe-buy-button
+                buy-button-id="buy_btn_1QF2iCF9QtEYmFjuM1YzAefr"
+                publishable-key="pk_test_51QF2SLF9QtEYmFjuhKpM35jLbKYEq56KSCLrvNVVkKfqrNUcmIe49OQaWf3oGe8SY2BaHVO9gAiEUmClIA8w2nXD00pCNpV5wM"
+              >
+               </stripe-buy-button>
+        </div>
       </div>
 
       <div className="schedule">

@@ -37,6 +37,18 @@ const DashboardCoach = () => {
   const handleCloseProfilePopup = () => {
     setIsProfilePopupOpen(false); // Close the profile popup
   };
+  const loadStripeScript = () => {
+    // Load the Stripe script dynamically
+    const script = document.createElement('script');
+    script.src = "https://js.stripe.com/v3/buy-button.js";
+    script.async = true;
+    script.onload = () => console.log("Stripe script loaded successfully!");
+    document.body.appendChild(script);
+  };
+
+  useEffect(() => {
+    loadStripeScript();
+  }, []);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -62,6 +74,22 @@ const DashboardCoach = () => {
         <h3>Wallet</h3>
         <p>${walletAmount}</p>
         {/* <p>${walletAmount.toFixed(2)}</p> */}
+        add to you wallet
+        <div id="stripe-buy-button-container" style={{ marginTop: '10px' }}>
+            <stripe-buy-button
+                buy-button-id="buy_btn_1QF2iCF9QtEYmFjuM1YzAefr"
+                publishable-key="pk_test_51QF2SLF9QtEYmFjuhKpM35jLbKYEq56KSCLrvNVVkKfqrNUcmIe49OQaWf3oGe8SY2BaHVO9gAiEUmClIA8w2nXD00pCNpV5wM"
+              >
+               </stripe-buy-button>
+        </div>
+        transfer to your bank account
+        <div id="stripe-buy-button-container" style={{ marginTop: '10px' }}>
+            <stripe-buy-button
+                buy-button-id="buy_btn_1QF2iCF9QtEYmFjuM1YzAefr"
+                publishable-key="pk_test_51QF2SLF9QtEYmFjuhKpM35jLbKYEq56KSCLrvNVVkKfqrNUcmIe49OQaWf3oGe8SY2BaHVO9gAiEUmClIA8w2nXD00pCNpV5wM"
+              >
+               </stripe-buy-button>
+        </div>
       </div>
       <div className="dashboard-box">
         <h3>Schedule</h3>

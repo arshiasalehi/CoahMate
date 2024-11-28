@@ -4,6 +4,7 @@ import Signup from './signup';
 import AboutUs from './aboutus';
 import ForgotPassword from './ForgotPassword'; 
 import '../App.css';
+import ThreeDPyramid from './ThreeDPyramid';
 
 const LoginPopup = ({ onClose }) => {
   const [activeTab, setActiveTab] = useState('login');
@@ -34,9 +35,9 @@ const LoginPopup = ({ onClose }) => {
 
   return (
     <div className="popup-overlay">
-      <div className="popup-content-large">
-        <nav className="popup-nav">
-          <button
+         <div className="popup-content-large">
+           <nav className="popup-nav">
+             <button
             className={activeTab === 'login' ? 'active-tab' : ''}
             onClick={() => setActiveTab('login')}
           >
@@ -54,7 +55,7 @@ const LoginPopup = ({ onClose }) => {
           >
             Help Center
           </button>
-          <button onClick={onClose}>Close</button>
+          
         </nav>
         <div className="popup-body">
           {renderContent()}
@@ -63,5 +64,6 @@ const LoginPopup = ({ onClose }) => {
     </div>
   );
 };
+
 
 export default LoginPopup;
