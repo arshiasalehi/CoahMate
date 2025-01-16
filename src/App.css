@@ -1,0 +1,684 @@
+/* General Container */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 20%;
+  background-color: #e9ecef;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h3 {
+  font-size: 1.4em;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 12px 0;
+  font-size: 1em;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+  border-radius: 4px;
+}
+
+.sidebar li:hover {
+  color: #007bff;
+  background-color: #f0f0f0;
+}
+
+/* Content Styling */
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #f8f9fa;
+  overflow-y: auto; /* Enables main section scrolling */
+}
+
+/* Dashboard Client Section */
+.dashboardClient-container {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.dashboardClient-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.box {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.box:hover {
+  transform: translateY(-4px);
+}
+
+/* Headings and Text */
+h2 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+p, ul {
+  font-size: 1em;
+  color: #555;
+}
+
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto; /* Ensure overlay can scroll if content overflows */
+}
+
+/* Large Popup Content */
+.popup-content-large {
+  background-color: white;
+  padding: 30px;
+  width: 800px;
+  max-height: 80vh;
+  border-radius: 10px;
+  border: 2px solid #333;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  position: relative;
+}
+
+.popup-nav {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.popup-nav button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.popup-nav button:hover {
+  background-color: #0056b3;
+}
+
+
+.profile-popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.profile-popup-content h2 {
+  margin-top: 0;
+}
+
+.profile-popup-content label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.profile-popup-content input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.profile-popup-content button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+}
+
+.profile-popup-content button[type="button"] {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+a {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* Additional Styling */
+h1, h2 {
+  color: #333;
+}
+.chat-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.messages {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.message-sent {
+  background-color: #e1ffc7;
+  padding: 5px;
+  border-radius: 10px;
+  text-align: right;
+  margin: 5px 0;
+}
+
+.message-received {
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+.input-container {
+  display: flex;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+/* Chat Popup Overlay */
+.chat-popup {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  max-height: 80vh;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.chat-popup h3 {
+  text-align: center;
+  color: #333;
+}
+
+.chat-popup button {
+  align-self: flex-end;
+  padding: 8px 12px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chat-popup button:hover {
+  background-color: #b02a37;
+}
+
+/* Chat Messages Styling */
+.chat-messages {
+  flex-grow: 1;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding-right: 10px; /* Adds space for scrollbar */
+  border-bottom: 1px solid #ccc;
+}
+
+.message-sent, .message-received {
+  padding: 8px 12px;
+  border-radius: 12px;
+  max-width: 80%;
+  margin: 5px 0;
+  word-wrap: break-word;
+}
+
+.message-sent {
+  background-color: #007bff;
+  color: #fff;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.message-received {
+  background-color: #f1f1f1;
+  color: #333;
+  align-self: flex-start;
+  text-align: left;
+}
+
+.timestamp {
+  font-size: 0.75em;
+  color: #888;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Input Container */
+.chat-popup form {
+  display: flex;
+  gap: 5px;
+}
+
+.chat-popup input[type="text"] {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.popup-nav button {
+  background-color: transparent;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.popup-nav button.active-tab {
+  background-color: #007BFF; /* Highlight color */
+  color: white;
+  border-radius: 5px;
+}
+
+
+.chat-popup button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.chat-popup button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* General */
+.chat-popup .chat-messages::-webkit-scrollbar {
+  width: 5px;
+}
+
+.chat-popup .chat-messages::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+/* Profile Popup General Styles */
+.profile-popup,
+.profile-popup-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh; /* Limit height to 80% of viewport */
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  z-index: 1000;
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.profile-popup h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.profile-popup label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #555;
+}
+
+.profile-popup input[type="text"],
+.profile-popup input[type="number"],
+.profile-popup input[type="date"],
+.profile-popup input[type="time"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.profile-popup .buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.profile-popup .buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.profile-popup .buttons button:first-child {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.profile-popup .buttons button:nth-child(2) {
+  background-color: #f44336;
+  color: white;
+}
+
+.profile-popup .buttons button:last-child {
+  background-color: #008CBA;
+  color: white;
+}
+
+.profile-popup h3 {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #333;
+}
+
+.profile-popup p {
+  color: #666;
+}
+
+/* Schedule Availability Section */
+.schedule-item {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.schedule-item label {
+  font-weight: normal;
+}
+
+.schedule-item button {
+  background-color: #f44336;
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.schedule-item button:hover {
+  background-color: #d32f2f;
+}
+
+.profile-popup .add-availability {
+  margin-top: 15px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.profile-popup .add-availability:hover {
+  background-color: #45a049;
+}
+.profile-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  left: -350px;
+}
+
+.profile-image {
+  max-width: 80px; 
+  height: auto;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.profile-button:hover .profile-image {
+  transform: scale(1.1); 
+}
+.chat-room-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  max-height: 550px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.chat-room-popup button {
+  background-color: #ff4757;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 5px;
+  border-radius: 4px;
+  align-self: flex-end;
+  width: 75px;
+  transition: background-color 0.3s ease;
+}
+
+.chat-room-popup button:hover {
+  background-color: #e84118;
+}
+
+.chat-room-popup h3 {
+  margin: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  max-width: 70%;
+  padding: 10px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.sent {
+  background-color: #dcf8c6;
+  color: #0b6d02;
+  align-self: flex-end;
+  text-align: left;
+}
+
+.received {
+  background-color: #e9e9eb;
+  color: #333333;
+  align-self: flex-start;
+  text-align: left;
+}
+
+.timestamp {
+  font-size: 10px;
+  color: #888888;
+  margin-top: 5px;
+}
+
+.message-input {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background-color: #f1f1f1;
+  border-top: 1px solid #ddd;
+}
+
+.message-input input {
+  flex: 1;
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 20px;
+  margin-right: 10px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.message-input input:focus {
+  border-color: #aaaaaa;
+}
+
+.message-input button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.message-input button:hover {
+  background-color: #218838;
+}
+/* Overall container for documents */
+.documents-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow documents to wrap to the next line */
+  gap: 20px; /* Spacing between document boxes */
+  justify-content: center; /* Center align the boxes */
+  margin-top: 20px;
+}
+
+/* Individual document box */
+.document-box {
+  background-color: #f9f9f9; /* Light background color */
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  padding: 20px; /* Internal spacing */
+  width: 300px; /* Fixed width for consistency */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: flex-start; /* Align content to the left */
+}
+
+.document-box h4 {
+  margin-bottom: 10px;
+  color: #333; /* Darker color for the heading */
+}
+
+.document-box p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555; /* Subtle text color */
+}
+
+.document-box p strong {
+  color: #000; /* Bold label color */
+}
+
